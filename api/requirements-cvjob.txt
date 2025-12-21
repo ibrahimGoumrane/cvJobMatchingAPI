@@ -1,0 +1,13 @@
+langchain
+langchain-ollama
+langchain-community
+langchain-core
+pydantic
+numpy
+pandas
+python-dotenv
+pypdfium2
+pytesseract
+Pillow
+docx2txt
+openpyxl
