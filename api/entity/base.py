@@ -13,15 +13,15 @@ class Base(DeclarativeBase):
 
 class JobProcessing(Base):
     __tablename__ = "job_processing"
-    id = Column(Integer, primary_key=True)
+    id = Column(String(36), primary_key=True)
     user_id = Column(Integer, nullable=False)
     jobdesc_path = Column(String(255), nullable=False)
     cv_path = Column(String(255), nullable=False)
-    decision = Column(String(255), nullable=False)
-    report_path = Column(String(255), nullable=False)
-    progress = Column(Integer, nullable=False)
-    status = Column(Enum(Status), nullable=False)
-    created_at = Column(DateTime, nullable=False, default=datetime.now())
-    updated_at = Column(DateTime, nullable=False, default=datetime.now(), onupdate=datetime.now())
+    decision = Column(String(255), nullable=True)
+    report_path = Column(String(255), nullable=True)
+    progress = Column(Integer, nullable=False, default=0)
+    status = Column(Enum(Status), nullable=False, default=Status.PENDING)
+    created_at = Column(DateTime, nullable=False, default=datetime.now)
+    updated_at = Column(DateTime, nullable=False, default=datetime.now, onupdate=datetime.now)
     
 

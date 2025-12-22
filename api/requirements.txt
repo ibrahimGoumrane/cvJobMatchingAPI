@@ -15,4 +15,6 @@ python-multipart
 
 # --- Utilities ---
 python-dotenv
-sqlalchemy_utils
+sqlalchemy_utils    
+pymysql
+aiofiles 
