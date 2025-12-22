@@ -34,6 +34,18 @@ async def get_jobs():
         data=jobs
     )
 
+@router.get("/user/{user_id}", response_model=ApiResponse[list[JobProcessingBase]])
+async def get_user_jobs(user_id: int):
+    """
+    Get all jobs for a specific user
+    """
+    jobs = await job_service.get_jobs_by_user(user_id)
+    return ApiResponse.success(
+        status_code=200,
+        message="User jobs retrieved successfully",
+        data=jobs
+    )
+
 @router.get("/files")
 async def download_file(path: str):
     """

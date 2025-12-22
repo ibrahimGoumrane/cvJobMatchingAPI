@@ -158,6 +158,12 @@ async def get_all_jobs() -> list[JobProcessing]:
         jobs = result.scalars().all()
         return jobs
 
+async def get_jobs_by_user(user_id: int) -> list[JobProcessing]:
+    async with AsyncSessionLocal() as session:
+        result = await session.execute(select(JobProcessing).where(JobProcessing.user_id == user_id))
+        jobs = result.scalars().all()
+        return jobs
+
 async def get_file_content(file_path: str):
     if not os.path.exists(file_path):
         raise FileNotFoundError(f"File not found: {file_path}")
