@@ -10,7 +10,7 @@ class Status(str, Enum):
 
 class JobProcessingBase(BaseModel):
     id: str
-    user_id: int
+    user_id: str
     jobdesc_path: str
     cv_path: str
     decision: Optional[str] = None

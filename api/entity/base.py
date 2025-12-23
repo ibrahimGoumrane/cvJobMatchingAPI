@@ -14,7 +14,7 @@ class Base(DeclarativeBase):
 class JobProcessing(Base):
     __tablename__ = "job_processing"
     id = Column(String(36), primary_key=True)
-    user_id = Column(Integer, nullable=False)
+    user_id = Column(String(255), nullable=False)
     jobdesc_path = Column(String(255), nullable=False)
     cv_path = Column(String(255), nullable=False)
     decision = Column(String(255), nullable=True)
