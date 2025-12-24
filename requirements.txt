@@ -17,4 +17,5 @@ python-multipart
 python-dotenv
 sqlalchemy_utils    
 pymysql
-aiofiles 
+aiofiles
+ 
